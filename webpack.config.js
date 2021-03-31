@@ -30,7 +30,7 @@ module.exports = env => {
 
     plugins: [
       new HtmlWebpackPlugin({
-        title: "test water physics",
+        title: "three.js template",
         template: path.resolve(__dirname, 'src/template.html')
       })
     ],
