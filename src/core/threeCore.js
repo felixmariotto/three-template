@@ -95,6 +95,8 @@ function onWindowResize() {
 
 //
 
+const callbacks = [];
+
 function loop() {
 
 	requestAnimationFrame( loop );
@@ -107,6 +109,14 @@ function loop() {
 
 	}
 
+	callbacks.forEach( callback => callback() );
+
+}
+
+function addCallback( callback ) {
+
+	 callbacks.push( callback );
+
 }
 
 //
@@ -115,5 +125,6 @@ export default {
 	scene,
 	camera,
 	renderer,
-	loop
+	loop,
+	addCallback
 }
